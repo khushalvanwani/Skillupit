@@ -1,0 +1,596 @@
+[
+  {
+    "question": "Why so JavaScript and Java have similar name?",
+    "options": [
+      "JavaScript is a stripped-down version of Java",
+      "JavaScript's syntax is loosely based on Java's",
+      "They both originated on the island of Java",
+      "None of the above"
+    ],
+    "answer": "JavaScript's syntax is loosely based on Java's"
+  },
+  {
+    "question": "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+    "options": [
+      "The User's machine running a Web browser",
+      "The Web server",
+      "A central machine deep within Netscape's corporate offices",
+      "None of the above"
+    ],
+    "answer": "The User's machine running a Web browser"
+  },
+  {
+    "question": "______ JavaScript is also called client-side JavaScript.",
+    "options": [
+      "Microsoft",
+      "Navigator",
+      "LiveWire",
+      "Native"
+    ],
+    "answer": "Navigator"
+  },
+  {
+    "question": "__________ JavaScript is also called server-side JavaScript.",
+    "options": [
+      "Microsoft",
+      "Navigator",
+      "LiveWire",
+      "Native"
+    ],
+    "answer": "LiveWire"
+  },
+  {
+    "question": "What are variables used for in JavaScript Programs?",
+    "options": [
+      "Storing numbers, dates, or other values",
+      "Varying randomly",
+      "Causing high-school algebra flashbacks",
+      "None of the above"
+    ],
+    "answer": "Storing numbers, dates, or other values"
+  },
+  {
+    "question": "_____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.",
+    "options": [
+      "Client-side",
+      "Server-side",
+      "Local",
+      "Native"
+    ],
+    "answer": "Client-side"
+  },
+  {
+    "question": "What should appear at the very end of your JavaScript? The <script LANGUAGE=\"JavaScript\"> tag",
+    "options": [
+      "The </script>",
+      "The <script>",
+      "The END statement",
+      "None of the above"
+    ],
+    "answer": "The </script>"
+  },
+  {
+    "question": "Which of the following can't be done with client-side JavaScript?",
+    "options": [
+      "Validating a form",
+      "Sending a form's contents by email",
+      "Storing the form's contents to a database file on the server",
+      "None of the above"
+    ],
+    "answer": "Storing the form's contents to a database file on the server"
+  },
+  {
+    "question": "Which of the following are capabilities of functions in JavaScript?",
+    "options": [
+      "Return a value",
+      "Accept parameters and Return a value",
+      "Accept parameters",
+      "None of the above"
+    ],
+    "answer": "Accept parameters"
+  },
+  {
+    "question": "Which of the following is not a valid JavaScript variable name?",
+    "options": [
+      "2names",
+      "_first_and_last_names",
+      "FirstAndLast",
+      "None of the above"
+    ],
+    "answer": "2names"
+  },
+  {
+    "question": "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
+    "options": [
+      "<SCRIPT>",
+      "<BODY>",
+      "<HEAD>",
+      "<TITLE>"
+    ],
+    "answer": "<SCRIPT>"
+  },
+  {
+    "question": "How does JavaScript store dates in a date object?",
+    "options": [
+      "The number of milliseconds since January 1st, 1970",
+      "The number of days since January 1st, 1900",
+      "The number of seconds since Netscape's public stock offering.",
+      "None of the above"
+    ],
+    "answer": "The number of milliseconds since January 1st, 1970"
+  },
+  {
+    "question": "Which of the following attribute can hold the JavaScript version?",
+    "options": [
+      "LANGUAGE",
+      "SCRIPT",
+      "VERSION",
+      "None of the above"
+    ],
+    "answer": "LANGUAGE"
+  },
+  {
+    "question": "What is the correct JavaScript syntax to write \"Hello World\"?",
+    "options": [
+      "System.out.println(\"Hello World\")",
+      "println (\"Hello World\")",
+      "document.write(\"Hello World\")",
+      "response.write(\"Hello World\")"
+    ],
+    "answer": "document.write(\"Hello World\")"
+  },
+  {
+    "question": "Which of the following way can be used to indicate the LANGUAGE attribute?",
+    "options": [
+      "<LANGUAGE=\"JavaScriptVersion\">",
+      "<SCRIPT LANGUAGE=\"JavaScriptVersion\">",
+      "<SCRIPT LANGUAGE=\"JavaScriptVersion\"> JavaScript statements…</SCRIPT>",
+      "<SCRIPT LANGUAGE=\"JavaScriptVersion\"!> JavaScript statements…</SCRIPT>"
+    ],
+    "answer": "<SCRIPT LANGUAGE=\"JavaScriptVersion\"> JavaScript statements…</SCRIPT>"
+  },
+  {
+    "question": "Inside which HTML element do we put the JavaScript?",
+    "options": [
+      "<js>",
+      "<scripting>",
+      "<script>",
+      "<javascript>"
+    ],
+    "answer": "<script>"
+  },
+  {
+    "question": "What is the correct syntax for referring to an external script called \" abc.js\"?",
+    "options": [
+      "<script href=\" abc.js\">",
+      "<script name=\" abc.js\">",
+      "<script src=\" abc.js\">",
+      "None of the above"
+    ],
+    "answer": "<script src=\" abc.js\">"
+  },
+  {
+    "question": "Which types of image maps can be used with JavaScript?",
+    "options": [
+      "Server-side image maps",
+      "Client-side image maps",
+      "Server-side image maps and Client-side image maps",
+      "None of the above"
+    ],
+    "answer": "Client-side image maps"
+  },
+  {
+    "question": "Which of the following navigator object properties is the same in both Netscape and IE?",
+    "options": [
+      "navigator.appCodeName",
+      "navigator.appName",
+      "navigator.appVersion",
+      "None of the above"
+    ],
+    "answer": "navigator.appCodeName"
+  },
+  {
+    "question": "Which is the correct way to write a JavaScript array?",
+    "options": [
+      "var txt = new Array(1:\"tim\",2:\"kim\",3:\"jim\")",
+      "var txt = new Array:1=(\"tim\")2=(\"kim\")3=(\"jim\")",
+      "var txt = new Array(\"tim\",\"kim\",\"jim\")",
+      "var txt = new Array=\"tim\",\"kim\",\"jim\""
+    ],
+    "answer": "var txt = new Array(\"tim\",\"kim\",\"jim\")"
+  },
+  {
+    "question": "What does the <noscript> tag do?",
+    "options": [
+      "Enclose text to be displayed by non-JavaScript browsers.",
+      "Prevents scripts on the page from executing.",
+      "Describes certain low-budget movies.",
+      "None of the above"
+    ],
+    "answer": "Enclose text to be displayed by non-JavaScript browsers."
+  },
+  {
+    "question": "If para1 is the DOM object for a paragraph, what is the correct syntax to change the text within the paragraph?",
+    "options": [
+      "\"New Text\"?",
+      "para1.value=\"New Text\";",
+      "para1.firstChild.nodeValue= \"New Text\";",
+      "para1.nodeValue=\"New Text\";"
+    ],
+    "answer": "para1.firstChild.nodeValue= \"New Text\";"
+  },
+  {
+    "question": "JavaScript entities start with _______ and end with _________.",
+    "options": [
+      "Semicolon, colon",
+      "Semicolon, Ampersand",
+      "Ampersand, colon",
+      "Ampersand, semicolon"
+    ],
+    "answer": "Ampersand, semicolon"
+  },
+  {
+    "question": "Which of the following best describes JavaScript?",
+    "options": [
+      "a low-level programming language.",
+      "a scripting language precompiled in the browser.",
+      "a compiled scripting language.",
+      "an object-oriented scripting language."
+    ],
+    "answer": "an object-oriented scripting language."
+  },
+  {
+    "question": "Choose the server-side JavaScript object?",
+    "options": [
+      "FileUpLoad",
+      "Function",
+      "File",
+      "Date"
+    ],
+    "answer": "File"
+  },
+  {
+    "question": "Choose the client-side JavaScript object?",
+    "options": [
+      "Database",
+      "Cursor",
+      "Client",
+      "FileUpLoad"
+    ],
+    "answer": "FileUpLoad"
+  },
+  {
+    "question": "Which of the following is not considered a JavaScript operator?",
+    "options": [
+      "new",
+      "this",
+      "delete",
+      "typeof"
+    ],
+    "answer": "new"
+  },
+  {
+    "question": "______ method evaluates a string of JavaScript code in the context of the specified object.",
+    "options": [
+      "Eval",
+      "ParseInt",
+      "ParseFloat",
+      "Efloat"
+    ],
+    "answer": "Eval"
+  },
+  {
+    "question": "Which of the following event fires when the form element loses the focus: <button>, <input>, <label>, <select>, <textarea>?",
+    "options": [
+      "onfocus",
+      "onblur",
+      "onclick",
+      "ondblclick"
+    ],
+    "answer": "onblur"
+  },
+  {
+    "question": "The syntax of Eval is ________________",
+    "options": [
+      "[objectName.]eval(numeriC.",
+      "[objectName.]eval(string)",
+      "[EvalName.]eval(string)",
+      "[EvalName.]eval(numeriC."
+    ],
+    "answer": "[objectName.]eval(string)"
+  },
+  {
+    "question": "JavaScript is interpreted by _________",
+    "options": [
+      "Client",
+      "Server",
+      "Object",
+      "None of the above"
+    ],
+    "answer": "Client"
+  },
+  {
+    "question": "Using _______ statement is how you test for a specific condition.",
+    "options": [
+      "Select",
+      "If",
+      "Switch",
+      "For"
+    ],
+    "answer": "If"
+  },
+  {
+    "question": "Which of the following is the structure of an if statement?",
+    "options": [
+      "if (conditional expression is true) thenexecute this codeend if",
+      "if (conditional expression is true)execute this codeend if",
+      "if (conditional expression is true) {then execute this code>->}",
+      "if (conditional expression is true) then {execute this code}"
+    ],
+    "answer": "if (conditional expression is true) {then execute this code>->}"
+  },
+  {
+    "question": "How to create a Date object in JavaScript?",
+    "options": [
+      "dateObjectName = new Date([parameters])",
+      "dateObjectName.new Date([parameters])",
+      "dateObjectName := new Date([parameters])",
+      "dateObjectName Date([parameters])"
+    ],
+    "answer": "dateObjectName = new Date([parameters])"
+  },
+  {
+    "question": "The _______ method of an Array object adds and/or removes elements from an array.",
+    "options": [
+      "Reverse",
+      "Shift",
+      "Slice",
+      "Splice"
+    ],
+    "answer": "Splice"
+  },
+  {
+    "question": "To set up the window to capture all Click events, we use which of the following statement?",
+    "options": [
+      "window.captureEvents(Event.CLICK);",
+      "window.handleEvents (Event.CLICK);",
+      "window.routeEvents(Event.CLICK );",
+      "window.raiseEvents(Event.CLICK );"
+    ],
+    "answer": "window.captureEvents(Event.CLICK);"
+  },
+  {
+    "question": "Which tag(s) can handle mouse events in Netscape?",
+    "options": [
+      "<IMG>",
+      "<A>",
+      "<BR>",
+      "None of the above"
+    ],
+    "answer": "<A>"
+  },
+  {
+    "question": "____________ is the tainted property of a window object.",
+    "options": [
+      "Pathname",
+      "Protocol",
+      "Defaultstatus",
+      "Host"
+    ],
+    "answer": "Defaultstatus"
+  },
+  {
+    "question": "To enable data tainting, the end user sets the _________ environment variable.",
+    "options": [
+      "ENABLE_TAINT",
+      "MS_ENABLE_TAINT",
+      "NS_ENABLE_TAINT",
+      "ENABLE_TAINT_NS"
+    ],
+    "answer": "NS_ENABLE_TAINT"
+  },
+  {
+    "question": "In JavaScript, _________ is an object of the target language data type that encloses an object of the source language.",
+    "options": [
+      "a wrapper",
+      "a link",
+      "a cursor",
+      "a form"
+    ],
+    "answer": "a wrapper"
+  },
+  {
+    "question": "When a JavaScript object is sent to Java, the runtime engine creates a Java wrapper of type ___________",
+    "options": [
+      "ScriptObject",
+      "JSObject",
+      "JavaObject",
+      "Jobject"
+    ],
+    "answer": "JSObject"
+  },
+  {
+    "question": "_______ class provides an interface for invoking JavaScript methods and examining JavaScript properties.",
+    "options": [
+      "ScriptObject",
+      "JSObject",
+      "JavaObject",
+      "Jobject"
+    ],
+    "answer": "JSObject"
+  },
+  {
+    "question": "_________ is a wrapped Java array, accessed from within JavaScript code.",
+    "options": [
+      "JavaArray",
+      "JavaClass",
+      "JavaObject",
+      "JavaPackage"
+    ],
+    "answer": "JavaArray"
+  },
+  {
+    "question": "A ________ object is a reference to one of the classes in a Java package, such as netscape.javascript .",
+    "options": [
+      "JavaArray",
+      "JavaClass",
+      "JavaObject",
+      "JavaPackage"
+    ],
+    "answer": "JavaClass"
+  },
+  {
+    "question": "The JavaScript exception is available to the Java code as an instance of __________",
+    "options": [
+      "netscape.javascript.JSObject",
+      "netscape.javascript.JSException",
+      "netscape.plugin.JSException",
+      "None of the above"
+    ],
+    "answer": "netscape.javascript.JSException"
+  },
+  {
+    "question": "To automatically open the console when a JavaScript error occurs which of the following is added to prefs.js?",
+    "options": [
+      "user_pref(\" javascript.console.open_on_error\", false);",
+      "user_pref(\"javascript.console.open_error \", true);",
+      "user_pref(\"javascript.console.open_error \", false);",
+      "user_pref(\"javascript.console.open_on_error\", true);"
+    ],
+    "answer": "user_pref(\"javascript.console.open_on_error\", true);"
+  },
+  {
+    "question": "To open a dialog box each time an error occurs, which of the following is added to prefs.js?",
+    "options": [
+      "user_pref(\"javascript.classic.error_alerts\", true);",
+      "user_pref(\"javascript.classic.error_alerts \", false);",
+      "user_pref(\"javascript.console.open_on_error \", true);",
+      "user_pref(\"javascript.console.open_on_error \", false);"
+    ],
+    "answer": "user_pref(\"javascript.classic.error_alerts\", true);"
+  },
+  {
+    "question": "The syntax of a blur method in a button object is ______________",
+    "options": [
+      "Blur()",
+      "Blur(contrast)",
+      "Blur(value)",
+      "Blur(depth)"
+    ],
+    "answer": "Blur()"
+  },
+  {
+    "question": "The syntax of capture events method for document object is ______________",
+    "options": [
+      "captureEvents()",
+      "captureEvents(args eventType)",
+      "captureEvents(eventType)",
+      "captureEvents(eventVal)"
+    ],
+    "answer": "captureEvents(eventType)"
+  },
+  {
+    "question": "The syntax of close method for document object is ______________",
+    "options": [
+      "Close(doC.",
+      "Close(object)",
+      "Close(val)",
+      "Close()"
+    ],
+    "answer": "Close()"
+  },
+  {
+    "question": "<script type=\"text/javascript\">\nx=4+\"4\";\ndocument.write(x);\n</script>\nOutput------?",
+    "options": [
+      "44",
+      "8",
+      "4",
+      "Error output"
+    ],
+    "answer": "44"
+  },
+  {
+    "question": "Is it possible to nest functions in JavaScript?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "<script>\ndocument.write(navigator.appCodeName);\n</script>",
+    "options": [
+      "get code name of the browser of a visitor",
+      "set code name of the browser of a visitor",
+      "None of the above"
+    ],
+    "answer": "get code name of the browser of a visitor"
+  },
+  {
+    "question": "Scripting language are",
+    "options": [
+      "High Level Programming language",
+      "Assembly Level programming language",
+      "Machine level programming language"
+    ],
+    "answer": "High Level Programming language"
+  },
+  {
+    "question": "Which best explains getSelection()?",
+    "options": [
+      "Returns the VALUE of a selected OPTION.",
+      "Returns document.URL of the window in focus.",
+      "Returns the value of cursor-selected text",
+      "Returns the VALUE of a checked radio input."
+    ],
+    "answer": "Returns the value of cursor-selected text"
+  },
+  {
+    "question": "Choose the client-side JavaScript object:",
+    "options": [
+      "Database",
+      "Cursor",
+      "Client",
+      "FileUpLoad"
+    ],
+    "answer": "FileUpLoad"
+  },
+  {
+    "question": "What is mean by \"this\" keyword in javascript?",
+    "options": [
+      "It refers current object",
+      "It referes previous object",
+      "It is variable which contains value",
+      "None of the above"
+    ],
+    "answer": "It refers current object"
+  },
+  {
+    "question": "In JavaScript, Window.prompt() method return true or false value ?",
+    "options": [
+      "False",
+      "True"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "<script language=\"javascript\">\nfunction x()\n{\ndocument.write(2+5+\"8\");\n}\n</script>",
+    "options": [
+      "258",
+      "Error",
+      "7",
+      "78"
+    ],
+    "answer": "78"
+  },
+  {
+    "question": "<script type=\"text/javascript\">\nvar s = \"9123456 or 80000?\";\nvar pattern = /d{4}/;\nvar output = s.match(pattern);\ndocument.write(output);\n</script>",
+    "options": [
+      "9123",
+      "91234",
+      "80000",
+      "None of the above"
+    ],
+    "answer": "9123"
+  }
+]

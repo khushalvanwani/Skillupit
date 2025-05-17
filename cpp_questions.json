@@ -1,0 +1,992 @@
+[
+  {
+    "question": "Which of the following is not a type of constructor?",
+    "options": [
+      "Copy constructor",
+      "Friend constructor",
+      "Default constructor",
+      "Parameterized constructor"
+    ],
+    "answer": "Friend constructor"
+  },
+  {
+    "question": "Which of the following is not the member of class?",
+    "options": [
+      "Static function",
+      "Friend function",
+      "Const function",
+      "Virtual function"
+    ],
+    "answer": "Friend function"
+  },
+  {
+    "question": "Which of the following concepts means determining at runtime what method to invoke?",
+    "options": [
+      "Data hiding",
+      "Dynamic Typing",
+      "Dynamic binding",
+      "Dynamic loading"
+    ],
+    "answer": "Dynamic binding"
+  },
+  {
+    "question": "Which of the following term is used for a function defined inside a class?",
+    "options": [
+      "Member Variable",
+      "Member function",
+      "Class function",
+      "Classic function"
+    ],
+    "answer": "Member function"
+  },
+  {
+    "question": "Which of the following concept of OOPS allows compiler to insert arguments in a function call if it is not specified?",
+    "options": [
+      "Call by value",
+      "Call by reference",
+      "Default arguments",
+      "Call by pointer"
+    ],
+    "answer": "Default arguments"
+  },
+  {
+    "question": "Which of the following cannot be friend?",
+    "options": [
+      "Function",
+      "Class",
+      "Object",
+      "Operator function"
+    ],
+    "answer": "Object"
+  },
+  {
+    "question": "Which of the following concepts of OOPS means exposing only necessary information to client?",
+    "options": [
+      "Encapsulation",
+      "Abstraction",
+      "Data hiding",
+      "Data binding"
+    ],
+    "answer": "Abstraction"
+  },
+  {
+    "question": "cout is a/an __________ .",
+    "options": [
+      "operator",
+      "function",
+      "object",
+      "macro"
+    ],
+    "answer": "object"
+  },
+  {
+    "question": "Which of the following is an abstract data type?",
+    "options": [
+      "int",
+      "double",
+      "string",
+      "Class"
+    ],
+    "answer": "Class"
+  },
+  {
+    "question": "Which of the following statement is correct?",
+    "options": [
+      "A constructor is called at the time of declaration of an object.",
+      "A constructor is called at the time of use of an object.",
+      "A constructor is called at the time of declaration of a class.",
+      "A constructor is called at the time of use of a class."
+    ],
+    "answer": "A constructor is called at the time of use of an object."
+  },
+  {
+    "question": "Which of the following approach is adapted by C++?",
+    "options": [
+      "Top-down",
+      "Bottom-up",
+      "Right-left",
+      "Left-right"
+    ],
+    "answer": "Bottom-up"
+  },
+  {
+    "question": "Which of the following is correct about function overloading?",
+    "options": [
+      "The types of arguments are different.",
+      "The order of argument is different.",
+      "The number of argument is same.",
+      "Both A and B."
+    ],
+    "answer": "Both A and B."
+  },
+  {
+    "question": "Which of the following is correct about class and structure?",
+    "options": [
+      "class can have member functions while structure cannot.",
+      "class data members are public by default while that of structure are private.",
+      "Pointer to structure or classes cannot be declared.",
+      "class data members are private by default while that of structure are public by default."
+    ],
+    "answer": "class data members are private by default while that of structure are public by default."
+  },
+  {
+    "question": "Which of the following concepts means wrapping up of data and functions together?",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "Which of the following concepts means waiting until runtime to determine which function to call?",
+    "options": [
+      "Data hiding",
+      "Dynamic casting",
+      "Dynamic binding",
+      "Dynamic loading"
+    ],
+    "answer": "Dynamic binding"
+  },
+  {
+    "question": "Which of the following operator is overloaded for object cout?",
+    "options": [
+      ">>",
+      "<<",
+      "+",
+      "="
+    ],
+    "answer": "<<"
+  },
+  {
+    "question": "Which of the following is the correct class of the object cout?",
+    "options": [
+      "iostream",
+      "istream",
+      "ostream",
+      "ifstream"
+    ],
+    "answer": "ostream"
+  },
+  {
+    "question": "Which of the following functions are performed by a constructor?",
+    "options": [
+      "Construct a new class",
+      "Construct a new object",
+      "Construct a new function",
+      "Initialize objects"
+    ],
+    "answer": "Construct a new object"
+  },
+  {
+    "question": "Which of the following problem causes an exception?",
+    "options": [
+      "Missing semicolon in statement in main().",
+      "A problem in calling function.",
+      "A syntax error.",
+      "A run-time error."
+    ],
+    "answer": "A run-time error."
+  },
+  {
+    "question": "Which of the following concepts is used to implement late binding?",
+    "options": [
+      "Virtual function",
+      "Operator function",
+      "Const function",
+      "Static function"
+    ],
+    "answer": "Virtual function"
+  },
+  {
+    "question": "Which of the following ways are legal to access a class data member using this pointer?",
+    "options": [
+      "this->x",
+      "this.x",
+      "*this.x",
+      "*this-x"
+    ],
+    "answer": "this->x"
+  },
+  {
+    "question": "Which of the following is a mechanism of static polymorphism?",
+    "options": [
+      "Operator overloading",
+      "Function overloading",
+      "Templates",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "Which of the following operators cannot be overloaded?",
+    "options": [
+      "[]",
+      "->",
+      "?:",
+      "*"
+    ],
+    "answer": "?:"
+  },
+  {
+    "question": "Which of the following header file includes definition of cin and cout?",
+    "options": [
+      "istream.h",
+      "ostream.h",
+      "iomanip.h",
+      "iostream.h"
+    ],
+    "answer": "iostream.h"
+  },
+  {
+    "question": "Which of the following keyword is used to overload an operator?",
+    "options": [
+      "overload",
+      "operator",
+      "friend",
+      "override"
+    ],
+    "answer": "operator"
+  },
+  {
+    "question": "Which of the following is an invalid visibility label while inheriting a class?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "friend"
+    ],
+    "answer": "friend"
+  },
+  {
+    "question": "Which one of the following options is correct?",
+    "options": [
+      "Friend function can access public data members of the class.",
+      "Friend function can access protected data members of the class.",
+      "Friend function can access private data members of the class.",
+      "All of the above."
+    ],
+    "answer": "All of the above."
+  },
+  {
+    "question": "Which of the following statements is correct in C++?",
+    "options": [
+      "Classes cannot have data as protected members.",
+      "Structures can have functions as members.",
+      "Class members are public by default.",
+      "Structure members are private by default."
+    ],
+    "answer": "Structures can have functions as members."
+  },
+  {
+    "question": "What is correct about the static data member of a class?",
+    "options": [
+      "A static member function can access only static data members of a class.",
+      "A static data member is shared among all the objects of the class.",
+      "A static data member can be accessed directly from main().",
+      "Both A and B."
+    ],
+    "answer": "Both A and B."
+  },
+  {
+    "question": "Which of the following statement is correct?",
+    "options": [
+      "Class is an instance of object.",
+      "Object is an instance of a class.",
+      "Class is an instance of data type.",
+      "Object is an instance of data type."
+    ],
+    "answer": "Object is an instance of a class."
+  },
+  {
+    "question": "Like constructors, can there be more than one destructors in a class?",
+    "options": [
+      "Yes",
+      "No",
+      "May Be",
+      "Can't Say"
+    ],
+    "answer": "No"
+  },
+  {
+    "question": "Which of the following function / types of function cannot have default parameters?",
+    "options": [
+      "Member function of class",
+      "Main()",
+      "Member function of structure",
+      "Both B and C"
+    ],
+    "answer": "Both B and C"
+  },
+  {
+    "question": "Unary scope resolution operator is denoted by",
+    "options": [
+      "!!",
+      "%%",
+      ":",
+      "::"
+    ],
+    "answer": "::"
+  },
+  {
+    "question": "A programmer can create custom header files that must be end with",
+    "options": [
+      ".h extension",
+      ".l extension",
+      ".ios extension",
+      ".a extension"
+    ],
+    "answer": ".h extension"
+  },
+  {
+    "question": "Choose the correct statements regarding inline functions.",
+    "options": [
+      "It speeds up execution",
+      "It slows down execution",
+      "It decreases the code size",
+      "Both A and C"
+    ],
+    "answer": "Both A and C"
+  },
+  {
+    "question": "Choose the correct answer for following piece of C++ pseudo code:\n\nvoid func(int a, int &b) { }\nint main(){ int a,b; func(a,b); }",
+    "options": [
+      "a is pass by value and b is pass by reference",
+      "a is pass by reference and b is pass by value",
+      "a is pass by value and b is pass by address",
+      "a is pass by value and b is pass by pointer"
+    ],
+    "answer": "a is pass by value and b is pass by reference"
+  },
+  {
+    "question": "Overloaded functions in C++ OOPS are",
+    "options": [
+      "Functions preceding with virtual keywords.",
+      "Functions inherited from base class to derived class.",
+      "Two or more functions having same name but different number of parameters or type.",
+      "None of above"
+    ],
+    "answer": "Two or more functions having same name but different number of parameters or type."
+  },
+  {
+    "question": "Which of the following is a valid inline function foo?",
+    "options": [
+      "inline void foo() { }",
+      "void foo() inline{}",
+      "inline:void foo(){}",
+      "none"
+    ],
+    "answer": "inline void foo() { }"
+  },
+  {
+    "question": "Default values for a function are specified when_______________",
+    "options": [
+      "Function is defined",
+      "Function is declared",
+      "Both (A) and (B)",
+      "None"
+    ],
+    "answer": "Both (A) and (B)"
+  },
+  {
+    "question": "Which of the following permits function overloading on C++?",
+    "options": [
+      "type",
+      "number of arguments",
+      "type & number of arguments",
+      "number of objects"
+    ],
+    "answer": "type & number of arguments"
+  },
+  {
+    "question": "Function overloading is also similar to which of the following?",
+    "options": [
+      "operator overloading",
+      "constructor overloading",
+      "destructor overloading",
+      "function overloading"
+    ],
+    "answer": "operator overloading"
+  },
+  {
+    "question": "Overloaded functions are ________________",
+    "options": [
+      "Very long functions that can hardly run",
+      "One function containing another one or more functions inside it",
+      "Two or more functions with the same name but different number of parameters or type",
+      "Very long functions"
+    ],
+    "answer": "Two or more functions with the same name but different number of parameters or type"
+  },
+  {
+    "question": "What will happen while using pass by reference?",
+    "options": [
+      "The values of those variables are passed to the function so that it can manipulate them",
+      "The location of variable in memory is passed to the function so that it can use the same memory area for its processing",
+      "The function declaration should contain ampersand (& in its type declaration)",
+      "The function declaration should contain $"
+    ],
+    "answer": "The location of variable in memory is passed to the function so that it can use the same memory area for its processing"
+  },
+  {
+    "question": "What should be passed in parameters when function does not require any parameters?",
+    "options": [
+      "void",
+      "blank space",
+      "both void & blank space",
+      "tab space"
+    ],
+    "answer": "void"
+  },
+  {
+    "question": "What are the advantages of passing arguments by reference?",
+    "options": [
+      "Changes to parameter values within the function also affect the original arguments",
+      "There is need to copy parameter values (i.e. less memory used)",
+      "There is no need to call constructors for parameters (i.e. faster)",
+      "All of the mentioned"
+    ],
+    "answer": "All of the mentioned"
+  },
+  {
+    "question": "If the user did not supply the value, what value will it take?",
+    "options": [
+      "default value",
+      "rise an error",
+      "both default value & rise an error",
+      "error"
+    ],
+    "answer": "default value"
+  },
+  {
+    "question": "Which value will it take when both user and default values are given?",
+    "options": [
+      "user value",
+      "default value",
+      "custom value",
+      "defined value"
+    ],
+    "answer": "user value"
+  },
+  {
+    "question": "To which does the function pointer point to?",
+    "options": [
+      "variable",
+      "constants",
+      "function",
+      "absolute variables"
+    ],
+    "answer": "function"
+  },
+  {
+    "question": "What will we not do with function pointers?",
+    "options": [
+      "allocation of memory",
+      "deallocation of memory",
+      "both allocation & deallocation of memory",
+      "finds memory status"
+    ],
+    "answer": "both allocation & deallocation of memory"
+  },
+  {
+    "question": "Which keyword is used to define the macros in C++?",
+    "options": [
+      "macro",
+      "define",
+      "#define",
+      "#macro"
+    ],
+    "answer": "#define"
+  },
+  {
+    "question": "Which symbol is used to declare the preprocessor directives?",
+    "options": [
+      "#",
+      "$",
+      "*",
+      "^"
+    ],
+    "answer": "#"
+  },
+  {
+    "question": "What is the mandatory preprocessor directive for C++?",
+    "options": [
+      "#define <iostream>",
+      "#include <iostream>",
+      "#undef <iostream>",
+      "#macro <iostream>"
+    ],
+    "answer": "#include <iostream>"
+  },
+  {
+    "question": "Which of the following supports the concept that reusability is a desirable feature of a language?",
+    "options": [
+      "It reduces the testing time",
+      "It reduces maintenance cost",
+      "It decreases the compilation time",
+      "It reduced both testing and maintenance time"
+    ],
+    "answer": "It reduced both testing and maintenance time"
+  },
+  {
+    "question": "Which of the following feature is not provided by C?",
+    "options": [
+      "Pointers",
+      "Structures",
+      "References",
+      "Functions"
+    ],
+    "answer": "References"
+  },
+  {
+    "question": "What happens if the following program is executed in C and C++?\n\n#include <stdio.h>\nvoid main() { printf(\"Hello World\"); }",
+    "options": [
+      "Error in both C and C++",
+      "Successful run in both C and C++",
+      "Error in C and successful execution in C++",
+      "Error in C++ and successful execution in C"
+    ],
+    "answer": "Error in C++ and successful execution in C"
+  },
+  {
+    "question": "What happens if the following program is executed in C and C++?\n\n#include<stdio.h>\nint main() { foo(); } \nint foo() { printf(\"Hello\"); return 0; }",
+    "options": [
+      "Error in both C and C++",
+      "Warning in both C and C++",
+      "Error in C++ but Warning in C",
+      "Error in C but Warning in C++"
+    ],
+    "answer": "Error in C but Warning in C++"
+  },
+  {
+    "question": "Which of the following feature is not provided by C?",
+    "options": [
+      "Pointers",
+      "Structures",
+      "References",
+      "Functions"
+    ],
+    "answer": "References"
+  },
+  {
+    "question": "Which of the following is not a fundamental type is not present in C but present in C++?",
+    "options": [
+      "int",
+      "float",
+      "bool",
+      "void"
+    ],
+    "answer": "bool"
+  },
+  {
+    "question": "Which of the following is C++ equivalent for scanf()?",
+    "options": [
+      "cin",
+      "cout",
+      "print",
+      "input"
+    ],
+    "answer": "cin"
+  },
+  {
+    "question": "Which of the following is C++ equivalent for printf()?",
+    "options": [
+      "cin",
+      "cout",
+      "print",
+      "input"
+    ],
+    "answer": "cout"
+  },
+  {
+    "question": "Which of the following is the correct difference between cin and scanf()?",
+    "options": [
+      "both are the same",
+      "cin is a stream object whereas scanf() is a function",
+      "scanf() is a stream object whereas cin is a function",
+      "cin is used for printing whereas scanf() is used for reading input"
+    ],
+    "answer": "cin is a stream object whereas scanf() is a function"
+  },
+  {
+    "question": "Which of the following is an exit-controlled loop?",
+    "options": [
+      "for",
+      "while",
+      "do-while",
+      "all of the mentioned"
+    ],
+    "answer": "do-while"
+  },
+  {
+    "question": "Which of the following is an entry-controlled loop?",
+    "options": [
+      "for",
+      "while",
+      "do-while",
+      "both while and for"
+    ],
+    "answer": "both while and for"
+  },
+  {
+    "question": "Which of the following is the scope resolution operator?",
+    "options": [
+      ".",
+      "*",
+      "::",
+      "~"
+    ],
+    "answer": "::"
+  },
+  {
+    "question": "Which of the following correctly declares an array?",
+    "options": [
+      "int array[10];",
+      "int array;",
+      "array{10};",
+      "array array[10];"
+    ],
+    "answer": "int array[10];"
+  },
+  {
+    "question": "What is the index number of the last element of an array with 9 elements?",
+    "options": [
+      "9",
+      "8",
+      "0",
+      "Programmer-defined"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "What is the correct definition of an array?",
+    "options": [
+      "An array is a series of elements of the same type in contiguous memory locations",
+      "An array is a series of element",
+      "An array is a series of elements of the same type placed in non-contiguous memory locations",
+      "An array is an element of the different type"
+    ],
+    "answer": "An array is a series of elements of the same type in contiguous memory locations"
+  },
+  {
+    "question": "Which of the following accesses the seventh element stored in array?",
+    "options": [
+      "array[6];",
+      "array[7];",
+      "array(7);",
+      "array;"
+    ],
+    "answer": "array[6];"
+  },
+  {
+    "question": "How are the constants declared?",
+    "options": [
+      "const keyword",
+      "#define preprocessor",
+      "both const keyword and #define preprocessor",
+      "$define"
+    ],
+    "answer": "both const keyword and #define preprocessor"
+  },
+  {
+    "question": "What are the parts of the literal constants?",
+    "options": [
+      "integer numerals",
+      "floating-point numerals",
+      "strings and boolean values",
+      "all of the mentioned"
+    ],
+    "answer": "all of the mentioned"
+  },
+  {
+    "question": "The constants are also called as _____________",
+    "options": [
+      "const",
+      "preprocessor",
+      "literals",
+      "variables"
+    ],
+    "answer": "literals"
+  },
+  {
+    "question": "The difference between x and ‘x’ is?",
+    "options": [
+      "The first one refers to a variable whose identifier is x and the second one refers to the character constant x",
+      "The first one is a character constant x and the second one is the string literal x",
+      "Both are same",
+      "Both are string literal"
+    ],
+    "answer": "The first one refers to a variable whose identifier is x and the second one refers to the character constant x"
+  },
+  {
+    "question": "Which of the following statement is not true about preprocessor directives?",
+    "options": [
+      "These are lines read and processed by the preprocessor",
+      "They do not produce any code by themselves",
+      "These must be written on their own line",
+      "They end with a semicolon"
+    ],
+    "answer": "They end with a semicolon"
+  },
+  {
+    "question": "What does a class in C++ holds?",
+    "options": [
+      "data",
+      "functions",
+      "both data & functions",
+      "arrays"
+    ],
+    "answer": "both data & functions"
+  },
+  {
+    "question": "Constructor is executed when _____.",
+    "options": [
+      "An object goes out of scope.",
+      "A class is declared",
+      "An object is created",
+      "An object is used"
+    ],
+    "answer": "An object is created"
+  },
+  {
+    "question": "Which category of data type a class belongs to?",
+    "options": [
+      "Fundamental data type",
+      "Derived data type",
+      "User defined derived data type",
+      "Atomic data type"
+    ],
+    "answer": "User defined derived data type"
+  },
+  {
+    "question": "Inline functions are avoided when ____________________________",
+    "options": [
+      "function contains static variables",
+      "function have recursive calls",
+      "function have loops",
+      "all of the mentioned"
+    ],
+    "answer": "function have recursive calls"
+  },
+  {
+    "question": "Pick the correct statement.",
+    "options": [
+      "Macros and inline functions are same thing",
+      "Macros looks like function calls but they are actually not",
+      "Inline functions looks like function but they are not",
+      "Inline function are always large"
+    ],
+    "answer": "Macros looks like function calls but they are actually not"
+  },
+  {
+    "question": "Where does the object is created?",
+    "options": [
+      "class",
+      "constructor",
+      "destructor",
+      "attributes"
+    ],
+    "answer": "constructor"
+  },
+  {
+    "question": "Pick out the other definition of objects.",
+    "options": [
+      "member of the class",
+      "associate of the class",
+      "attribute of the class",
+      "instance of the class"
+    ],
+    "answer": "instance of the class"
+  },
+  {
+    "question": "How many objects can present in a single class?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "as many as possible"
+    ],
+    "answer": "as many as possible"
+  },
+  {
+    "question": "Which special character is used to mark the end of class?",
+    "options": [
+      ";",
+      ":",
+      "#",
+      "$"
+    ],
+    "answer": ";"
+  },
+  {
+    "question": "Pick the other name of operator function.",
+    "options": [
+      "function overloading",
+      "operator overloading",
+      "member overloading",
+      "object overloading"
+    ],
+    "answer": "operator overloading"
+  },
+  {
+    "question": "How to declare operator function?",
+    "options": [
+      "operator sign",
+      "operator",
+      "name of the operator",
+      "name of the class"
+    ],
+    "answer": "operator"
+  },
+  {
+    "question": "Operator overloading is ___________",
+    "options": [
+      "making C++ operator works with objects",
+      "giving new meaning to existing operator",
+      "making the new operator",
+      "adding operation to the existing operators"
+    ],
+    "answer": "giving new meaning to existing operator"
+  },
+  {
+    "question": "C++ was originally developed by",
+    "options": [
+      "Sir Richard Hadlee",
+      "Clocksin and Mellish",
+      "Donald E. Knuth",
+      "Bjame Stroustrup"
+    ],
+    "answer": "Bjame Stroustrup"
+  },
+  {
+    "question": "Can main() function be made private?",
+    "options": [
+      "Yes, always",
+      "Yes, if program doesn't contain any classes",
+      "No, because main function is user defined",
+      "No, never"
+    ],
+    "answer": "No, never"
+  },
+  {
+    "question": "Where does the execution of the program starts?",
+    "options": [
+      "user-defined function",
+      "main function",
+      "void function",
+      "else function"
+    ],
+    "answer": "main function"
+  },
+  {
+    "question": "What are mandatory parts in the function declaration?",
+    "options": [
+      "return type, function name",
+      "return type, function name, parameters",
+      "parameters, function name",
+      "parameters, variables"
+    ],
+    "answer": "return type, function name, parameters"
+  },
+  {
+    "question": "Which is more effective while calling the functions?",
+    "options": [
+      "call by value",
+      "call by reference",
+      "call by pointer",
+      "call by object"
+    ],
+    "answer": "call by reference"
+  },
+  {
+    "question": "How many minimum number of functions should be present in a C++ program for its execution?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": "An inline function is expanded during ______________",
+    "options": [
+      "compile-time",
+      "run-time",
+      "never expanded",
+      "end of the program"
+    ],
+    "answer": "compile-time"
+  },
+  {
+    "question": "Which of the following is the correct way to declare a pointer ?",
+    "options": [
+      "int *ptr",
+      "int ptr",
+      "int &ptr",
+      "All of the above"
+    ],
+    "answer": "int *ptr"
+  },
+  {
+    "question": "Which of the following gives the [value] stored at the address pointed to by the pointer : ptr?",
+    "options": [
+      "Value(ptr)",
+      "ptr",
+      "&ptr",
+      "*ptr"
+    ],
+    "answer": "*ptr"
+  },
+  {
+    "question": "A pointer can be initialized with",
+    "options": [
+      "Null",
+      "Zero",
+      "Address of an object of same type",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "What does the following statement mean?  int (*fp)(char*)",
+    "options": [
+      "Pointer to a pointer",
+      "Pointer to an array of chars",
+      "Pointer to function taking a char* argument and returns an int",
+      "Function taking a char* argument and returning a pointer to int"
+    ],
+    "answer": "Pointer to function taking a char* argument and returns an int"
+  },
+  {
+    "question": "Which operator returns the address of unallocated blocks in memory?",
+    "options": [
+      "The delete operator",
+      "The empty operator",
+      "The new operator",
+      "All of them"
+    ],
+    "answer": "The new operator"
+  },
+  {
+    "question": "A pointer contains __________.",
+    "options": [
+      "Address of a variable",
+      "Name of the variable",
+      "Value of the variable",
+      "None of the above"
+    ],
+    "answer": "Address of a variable"
+  },
+  {
+    "question": "What will happen in this code?\n\nint a = 100, b = 200;\nint *p = &a, *q = &b;\np = q;",
+    "options": [
+      "b is assigned to a",
+      "p now points to b",
+      "a is assigned to b",
+      "q now points to a"
+    ],
+    "answer": "p now points to b"
+  }
+]
