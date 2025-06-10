@@ -1,166 +1,282 @@
 import React, { useState } from 'react';
-import {
-  View, Text, TextInput, TouchableOpacity,
-  StyleSheet, Dimensions, Image, ScrollView
-} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { View, Text, TextInput, Pressable, StyleSheet, Image, Alert, KeyboardAvoidingView, Platform } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-
-const { width } = Dimensions.get('window');
+// 👇 ADD THIS IMPORT
+import { useAuth } from './AuthContext';
 
 export default function SignupScreen({ navigation }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [secureText, setSecureText] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const handleSignup = () => {
-    // We'll link API here later
-    console.log('Signup pressed', { name, email, password, confirmPassword });
+  // 👇 GET login FROM CONTEXT
+  const { login } = useAuth();
+
+  function getCurrentDatetimeString() {
+    const now = new Date();
+    const pad = n => n.toString().padStart(2, '0');
+    const day = pad(now.getDate());
+    const month = pad(now.getMonth() + 1);
+    const year = now.getFullYear();
+    let hours = now.getHours();
+    const mins = pad(now.getMinutes());
+    const secs = pad(now.getSeconds());
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    return `${year}-${month}-${day}T${pad(hours)}:${mins}:${secs} ${ampm}`;
+  }
+
+  const handleSignup = async () => {
+    setLoading(true);
+
+    if (!name || !email || !password) {
+      Alert.alert('Missing Info', 'Please enter name, email, and password.');
+      setLoading(false);
+      return;
+    }
+
+    const login_date_time = getCurrentDatetimeString();
+
+    const body = {
+      name,
+      email,
+      password,
+      username: email,
+      login_date_time,
+      logout_date_time: 0,
+      flag: 0,
+    };
+
+    try {
+      const res = await fetch('https://www.skillupitacademy.com/backend/public/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body)
+      });
+
+      const text = await res.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        data = text;
+      }
+
+      if (res.ok && data && data.token) {
+        // 👇 Save login (store token & user globally)
+        await login(data.user, data.token);
+
+        Alert.alert('Success', 'Account created! Welcome!');
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MainTabs' }],
+        });
+      } else {
+        const msg = typeof data === 'object'
+          ? data?.error || data?.message || Object.values(data).flat().join('\n')
+          : data;
+        Alert.alert('Signup failed', msg || 'Unknown error');
+      }
+    } catch (err) {
+      Alert.alert('Network Error', err.message);
+    }
+    setLoading(false);
+  };
+
+  // SECRET ADMIN LOGIN (image tap)
+  const handleAdminLogin = () => {
+    Alert.alert('Admin Login', 'Welcome, Admin!');
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'MainTabs' }],
+    });
   };
 
   return (
-    <LinearGradient
-      colors={['#2b2c83', '#c84490']}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={styles.container}
-    >
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <View style={styles.card}>
+    <KeyboardAvoidingView style={{flex:1}} behavior={Platform.OS === "ios" ? "padding" : undefined}>
+      <View style={styles.container}>
+        <Pressable style={styles.imageWrapper} onPress={handleAdminLogin} hitSlop={30}>
           <Image
-            source={require('./assets/skillup-logo.png')}
-            style={styles.logo}
+            source={require('./assets/Subject.png')}
+            style={styles.image}
           />
-
-          <Text style={styles.title}>
-             <Text style={{ color: '#c84490' }}>Create an</Text> Account
-          </Text>
-
-          <View style={styles.inputContainer}>
-            <Icon name="account" size={20} color="gray" style={styles.icon} />
-            <TextInput
-              placeholder="Full Name"
-              placeholderTextColor="gray"
-              style={styles.input}
-              value={name}
-              onChangeText={setName}
+        </Pressable>
+        <Text style={styles.title}>The best way to study.{"\n"}Sign up for free.</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Name"
+          placeholderTextColor="#aaa"
+          value={name}
+          onChangeText={setName}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor="#aaa"
+          value={email}
+          keyboardType="email-address"
+          onChangeText={setEmail}
+          autoCapitalize="none"
+        />
+        <View style={styles.passwordWrapper}>
+          <TextInput
+            style={[styles.input, { flex: 1, marginBottom: 0 }]}
+            placeholder="Password"
+            placeholderTextColor="#aaa"
+            secureTextEntry={secureText}
+            value={password}
+            onChangeText={setPassword}
+            autoCapitalize="none"
+          />
+          <Pressable onPress={() => setSecureText(!secureText)}>
+            <Icon
+              name={secureText ? 'eye-off-outline' : 'eye-outline'}
+              size={24}
+              color="#aaa"
+              style={{ marginLeft: 10 }}
             />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Icon name="email" size={20} color="gray" style={styles.icon} />
-            <TextInput
-              placeholder="Email"
-              placeholderTextColor="gray"
-              style={styles.input}
-              value={email}
-              onChangeText={setEmail}
-            />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Icon name="lock" size={20} color="gray" style={styles.icon} />
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor="gray"
-              secureTextEntry
-              style={styles.input}
-              value={password}
-              onChangeText={setPassword}
-            />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Icon name="lock-check" size={20} color="gray" style={styles.icon} />
-            <TextInput
-              placeholder="Confirm Password"
-              placeholderTextColor="gray"
-              secureTextEntry
-              style={styles.input}
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-            />
-          </View>
-
-          <TouchableOpacity style={styles.signupBtnWrapper} onPress={handleSignup}>
-            <LinearGradient
-              colors={['#1c2b83', '#c84490']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 0 }}
-              style={styles.signupBtn}
-            >
-              <Text style={styles.signupText}>SIGN UP</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={styles.loginLink}>Already have an account? Login</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
-      </ScrollView>
-    </LinearGradient>
+        <Pressable
+          style={[styles.signupBtn, loading && { opacity: 0.6 }]}
+          onPress={handleSignup}
+          disabled={loading}
+        >
+          <Text style={styles.signupText}>{loading ? 'Signing up...' : 'Sign up'}</Text>
+        </Pressable>
+        {/* Social sign-up buttons at bottom */}
+        <View style={styles.bottomSocials}>
+          <Pressable style={[styles.socialBtn, styles.googleBtn]}>
+            <Icon name="google" size={24} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={styles.socialText}>Continue with Google</Text>
+          </Pressable>
+          <Pressable style={[styles.socialBtn, styles.appleBtn]}>
+            <Icon name="apple" size={24} color="#222" style={{ marginRight: 8 }} />
+            <Text style={[styles.socialText, { color: "#222" }]}>Continue with Apple</Text>
+          </Pressable>
+          <Pressable style={[styles.socialBtn, styles.facebookBtn]}>
+            <Icon name="facebook" size={24} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={styles.socialText}>Continue with Facebook</Text>
+          </Pressable>
+        </View>
+        <View style={styles.loginWrapper}>
+          <Text style={styles.loginText}>Have an account? </Text>
+          <Pressable onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.loginLink}>Log in</Text>
+          </Pressable>
+        </View>
+      </View>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
-  scrollContent: { flexGrow: 1, justifyContent: 'center', alignItems: 'center' },
-  card: {
-    width: width * 0.85,
-    backgroundColor: 'white',
-    borderRadius: 12,
-    paddingVertical: 30,
-    paddingHorizontal: 20,
+  container: {
+    flex: 1,
+    backgroundColor: '#171744',
     alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 48,
+    justifyContent: 'flex-start',
   },
-  logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 10,
-    resizeMode: 'contain',
+  imageWrapper: {
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    overflow: 'hidden',
+    marginBottom: 18,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
   },
   title: {
-    fontSize: 22,
+    fontSize: 23,
     fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
     marginBottom: 20,
-    color: '#1c2b83',
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    marginBottom: 20,
-    width: '100%',
-  },
-  icon: {
-    marginRight: 10,
   },
   input: {
-    flex: 1,
-    height: 40,
-    fontSize: 14,
-    color: '#000',
-  },
-  signupBtnWrapper: {
+    backgroundColor: '#2b2d42',
     width: '100%',
-    borderRadius: 25,
-    overflow: 'hidden',
-    marginBottom: 20,
+    padding: 15,
+    borderRadius: 10,
+    color: '#fff',
+    fontSize: 16,
+    marginBottom: 12,
+  },
+  passwordWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 12,
   },
   signupBtn: {
-    paddingVertical: 12,
+    backgroundColor: '#4e6af1',
+    width: '100%',
+    padding: 16,
+    borderRadius: 10,
     alignItems: 'center',
-    borderRadius: 25,
+    marginBottom: 24,
   },
   signupText: {
-    color: 'white',
-    fontWeight: '600',
+    color: '#fff',
+    fontSize: 17,
+    fontWeight: 'bold',
+  },
+  bottomSocials: {
+    width: '100%',
+    marginTop: 'auto',
+    marginBottom: 16,
+  },
+  socialBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    borderRadius: 14,
+    paddingVertical: 13,
+    marginBottom: 10,
+  },
+  googleBtn: {
+    backgroundColor: '#4e6af1',
+  },
+  appleBtn: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ececec',
+  },
+  facebookBtn: {
+    backgroundColor: '#182c4d',
+  },
+  socialText: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#fff',
+  },
+  loginWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 14,
+    marginBottom: 8,
+    justifyContent: 'center',
+  },
+  loginText: {
+    color: '#a7b0ff',
+    fontSize: 15,
   },
   loginLink: {
-    color: '#555',
-    marginTop: 10,
-    fontWeight: '500',
+    color: '#a7b0ff',
+    fontWeight: 'bold',
+    fontSize: 15,
+    textDecorationLine: 'underline',
   },
 });

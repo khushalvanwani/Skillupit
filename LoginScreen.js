@@ -1,181 +1,207 @@
 import React, { useState } from 'react';
 import {
-  View, Text, TextInput, TouchableOpacity,
-  StyleSheet, Image, Dimensions
+  View,
+  Text,
+  TextInput,
+  Pressable,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  Alert,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { MaterialCommunityIcons as Icon, FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+import { useAuth } from './AuthContext'; // <-- Add this!
 
 const { width } = Dimensions.get('window');
 
 export default function LoginScreen({ navigation }) {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [secureText, setSecureText] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const { login } = useAuth(); // <-- Add this!
 
   const handleLogin = async () => {
-    navigation.navigate('Options', { name: 'Developer' });
-  };
+  if (!email || !password) {
+    Alert.alert('Error', 'Please enter both email and password.');
+    return;
+  }
+  setLoading(true);
+  try {
+    const res = await fetch('https://www.skillupitacademy.com/backend/public/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await res.json();
+
+    if (res.ok && data.token) {
+      // Normal login success
+      await login(data.user, data.token);
+      navigation.replace('MainTabs', { name: 'Developer' });
+    } else if (data.error === 'Already logged in') {
+      // Don't login: Ask user to logout from website or wait for session expiry
+      Alert.alert(
+        'Already logged in',
+        'You are already logged in elsewhere. Please logout from all devices or wait a few minutes, then try again.'
+      );
+    } else {
+      Alert.alert('Login failed', data.error || 'Invalid credentials.');
+    }
+  } catch (err) {
+    Alert.alert('Network Error', err.message);
+  }
+  setLoading(false);
+};
 
   return (
-    <LinearGradient
-      colors={["#2b2c83", "#c84490"]}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={styles.container}
-    >
-      <View style={styles.card}>
-        <Image
-           source={require('./assets/skillup-logo.png')} // Make sure this is the correct logo pathr
-          style={styles.logo}
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.header}>Log in</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Email or username"
+          placeholderTextColor="#aaa"
+          value={email}
+          onChangeText={setEmail}
         />
-        <Text style={styles.title}>
-          <Text style={{ color: '#1c2b83' }}>Log</Text>
-          <Text style={{ color: '#c84490' }}>in</Text>
-        </Text>
 
-        <View style={styles.inputContainer}>
-          <Icon name="account" size={20} color="gray" style={styles.icon} />
+        <View style={styles.passwordWrapper}>
           <TextInput
-            placeholder="Enter your email"
-            placeholderTextColor="gray"
-            style={styles.input}
-            value={email}
-            onChangeText={setEmail}
-          />
-        </View>
-
-        <View style={styles.inputContainer}>
-          <Icon name="lock" size={20} color="gray" style={styles.icon} />
-          <TextInput
-            placeholder="Enter your password"
-            placeholderTextColor="gray"
-            secureTextEntry
-            style={styles.input}
+            style={[styles.input, { flex: 1 }]}
+            placeholder="Password"
+            placeholderTextColor="#aaa"
+            secureTextEntry={secureText}
             value={password}
             onChangeText={setPassword}
           />
+          <Pressable onPress={() => setSecureText(!secureText)}>
+            <Icon
+              name={secureText ? 'eye-off-outline' : 'eye-outline'}
+              size={24}
+              color="#aaa"
+              style={{ marginLeft: 10 }}
+            />
+          </Pressable>
         </View>
 
-        <TouchableOpacity>
-          <Text style={styles.forgotText}>
-            <Text style={{ color: '#1c2b83' }}>Forgot </Text>
-            <Text style={{ color: '#c84490' }}>Password</Text>
-          </Text>
-        </TouchableOpacity>
+        <Pressable style={styles.loginBtn} onPress={handleLogin} disabled={loading}>
+          <Text style={styles.loginText}>{loading ? 'Logging in...' : 'Log in'}</Text>
+        </Pressable>
 
-        <TouchableOpacity style={styles.loginBtnWrapper} onPress={handleLogin}>
-          <LinearGradient
-            colors={["#1c2b83", "#c84490"]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            style={styles.loginBtn}
-          >
-            <Text style={styles.loginText}>LOGIN</Text>
-          </LinearGradient>
-        </TouchableOpacity>
-        
-        {error ? <Text style={{ color: 'red', marginBottom: 10 }}>{error}</Text> : null}
+        <Pressable>
+          <Text style={styles.forgot}>Forgot password</Text>
+        </Pressable>
+      </ScrollView>
 
-        <Text style={styles.signupText}>Or Sign Up Using</Text>
+      {/* Social Buttons at Bottom */}
+      <View style={styles.bottomSocials}>
+        <Pressable style={styles.googleBtn}>
+          <Text style={styles.googleText}>G  Continue with Google</Text>
+        </Pressable>
 
-        <View style={styles.socialContainer}>
-          <FontAwesome name="facebook" size={30} color="#3b5998" style={styles.socialIcon} />
-          <FontAwesome name="twitter" size={30} color="#1DA1F2" style={styles.socialIcon} />
-          <FontAwesome name="google" size={30} color="#DB4437" style={styles.socialIcon} />
-        </View>
+        <Pressable style={styles.appleBtn}>
+          <Text style={styles.appleText}>  Continue with Apple</Text>
+        </Pressable>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-  <Text style={styles.signupPrompt}>
-    Don't have an account?
-    <Text style={{ color: '#1c2b83' }}> Sign </Text>
-    <Text style={{ color: '#c84490' }}>Up</Text>
-  </Text>
-</TouchableOpacity>
+        <Pressable style={styles.facebookBtn}>
+          <Text style={styles.facebookText}>f  Continue with Facebook</Text>
+        </Pressable>
       </View>
-    </LinearGradient>
+    </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#0f0f2b',
+    justifyContent: 'space-between',
   },
-  card: {
-    width: width * 0.85,
-    backgroundColor: 'white',
-    borderRadius: 12,
-    paddingVertical: 30,
+  content: {
     paddingHorizontal: 20,
+    paddingTop: 60,
     alignItems: 'center',
   },
-  logo: {
-    width: 200,
-    height: 200,
-    marginBottom: 10,
-    resizeMode: 'contain',
-  },
-  title: {
-    fontSize: 24,
+  header: {
+    color: '#fff',
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    marginBottom: 20,
-    width: '100%',
-  },
-  icon: {
-    marginRight: 10,
+    alignSelf: 'flex-start',
+    marginBottom: 30,
   },
   input: {
-    flex: 1,
-    height: 40,
-    fontSize: 14,
-    color: '#000',
-  },
-  forgotText: {
-    alignSelf: 'flex-end',
-    marginBottom: 20,
-    fontWeight: '500',
-  },
-  loginBtnWrapper: {
+    backgroundColor: '#2b2d42',
     width: '100%',
-    borderRadius: 25,
-    overflow: 'hidden',
-    marginBottom: 20,
+    padding: 15,
+    borderRadius: 10,
+    color: '#fff',
+    marginBottom: 15,
+    fontSize: 16,
+  },
+  passwordWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 15,
   },
   loginBtn: {
-    paddingVertical: 12,
+    backgroundColor: '#3e4162',
+    width: '100%',
+    padding: 15,
+    borderRadius: 10,
     alignItems: 'center',
-    borderRadius: 25,
+    marginBottom: 10,
   },
   loginText: {
-    color: 'white',
-    fontWeight: '600',
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  signupText: {
-    color: '#555',
+  forgot: {
+    color: '#8aaaff',
+    alignSelf: 'flex-start',
+    marginBottom: 20,
+  },
+  bottomSocials: {
+    paddingHorizontal: 20,
+    paddingBottom: 30,
+  },
+  googleBtn: {
+    backgroundColor: '#4e6af1',
+    width: '100%',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
     marginBottom: 10,
   },
-  socialContainer: {
-    flexDirection: 'row',
+  googleText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  appleBtn: {
+    backgroundColor: '#fff',
+    width: '100%',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
     marginBottom: 10,
   },
-  socialIcon: {
-    width: 40,
-    height: 40,
-    marginHorizontal: 8,
-    resizeMode: 'contain',
+  appleText: {
+    color: '#000',
+    fontWeight: 'bold',
   },
-  signupPrompt: {
-    color: '#555',
-    marginTop: 5,
+  facebookBtn: {
+    backgroundColor: '#182c4d',
+    width: '100%',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  facebookText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
