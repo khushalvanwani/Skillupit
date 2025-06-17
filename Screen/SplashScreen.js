@@ -31,13 +31,13 @@ const SplashScreen = () => {
 
   return (
     <ImageBackground
-      // source={require('./assets/bg-pattern.png')} // make a light WhatsApp-like pattern
+      // source={require('../assets/bg-pattern.png')} // make a light WhatsApp-like pattern
       style={styles.background}
       resizeMode="repeat"
     >
       <View style={styles.centered}>
         <Animated.Image
-          source={require('./assets/transparent.png')} // your SkillUp It logo
+          source={require('../assets/transparent.png')} // your SkillUp It logo
           style={[styles.logo, { opacity: fadeAnim }]}
           resizeMode="contain"
         />

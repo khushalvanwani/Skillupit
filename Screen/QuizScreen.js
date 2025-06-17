@@ -10,8 +10,8 @@ import {
   ScrollView,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useQuiz } from './QuizContext';
-import { useAuth } from './AuthContext';
+import { useQuiz } from '../Context/QuizContext';
+import { useAuth } from '../Context/AuthContext';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 const QUIZ_TIME = 10 * 60; // 10 min

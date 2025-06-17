@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, FlatList, Pressable, Dimensions }
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useSubjectContext } from './SubjectContext'; // CORRECT!
+import { useSubjectContext } from '../Context/SubjectContext'; // CORRECT!
 
 
 const { width } = Dimensions.get('window');

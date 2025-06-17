@@ -10,7 +10,7 @@ import {
   Alert,
 } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-import { useAuth } from './AuthContext'; // <-- Add this!
+import { useAuth } from '../Context/AuthContext'; // <-- Add this!
 
 const { width } = Dimensions.get('window');
 

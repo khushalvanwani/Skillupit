@@ -3,25 +3,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { ThemeProvider } from './ThemeContext';
-import { ProfileProvider } from './ProfileContext';
-import { SubjectProvider } from './SubjectContext';
-import { AuthProvider } from './AuthContext';
-import { QuizProvider } from './QuizContext';
+import { ThemeProvider } from './Context/ThemeContext';
+import { ProfileProvider } from './Context/ProfileContext';
+import { SubjectProvider } from './Context/SubjectContext';
+import { AuthProvider } from './Context/AuthContext';
+import { QuizProvider } from './Context/QuizContext';
 
 
-import SplashScreen from './SplashScreen';
-import LoginScreen from './LoginScreen';
-import SignupScreen from './SignupScreen';
-import OptionsScreen from './OptionsScreen';
-import TestSectionScreen from './TestSectionScreen';
-import QuizScreen from './QuizScreen';
-import AnalyticsScreen from './AnalyticsScreen';
-import ProfileScreen from './ProfileScreen';
-import SubjectSelectionScreen from './SubjectSelectionScreen';
-import SettingsScreen from './SettingsScreen';
-import ActivityScreen from './ActivityScreen';
-import TopicListScreen from './TopicList';
+import SplashScreen from './Screen/SplashScreen';
+import LoginScreen from './Screen/LoginScreen';
+import SignupScreen from './Screen/SignupScreen';
+import OptionsScreen from './Screen/OptionsScreen';
+import TestSectionScreen from './Screen/TestSectionScreen';
+import QuizScreen from './Screen/QuizScreen';
+import AnalyticsScreen from './Screen/AnalyticsScreen';
+import ProfileScreen from './Screen/ProfileScreen';
+import SubjectSelectionScreen from './Screen/SubjectSelectionScreen';
+import SettingsScreen from './Screen/SettingsScreen';
+import ActivityScreen from './Screen/ActivityScreen';
+import TopicListScreen from './Screen/TopicList';
 
 
 const Stack = createStackNavigator();

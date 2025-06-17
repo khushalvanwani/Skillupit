@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Pressable, ActivityIndicator, SafeAreaView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { useAuth } from './AuthContext'; // <-- get token
-import { useSubjectContext } from './SubjectContext';
+import { useAuth } from '../Context/AuthContext'; // <-- get token
+import { useSubjectContext } from '../Context/SubjectContext';
 
 const iconMap = {
   "fas fa-code-branch": "source-branch",

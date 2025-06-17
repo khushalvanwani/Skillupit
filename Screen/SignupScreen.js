@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, Image, Alert, KeyboardAvoidingView, Platform } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 // 👇 ADD THIS IMPORT
-import { useAuth } from './AuthContext';
+import { useAuth } from '../Context/AuthContext';
 
 export default function SignupScreen({ navigation }) {
   const [name, setName] = useState('');
@@ -103,7 +103,7 @@ export default function SignupScreen({ navigation }) {
       <View style={styles.container}>
         <Pressable style={styles.imageWrapper} onPress={handleAdminLogin} hitSlop={30}>
           <Image
-            source={require('./assets/Subject.png')}
+            source={require('../assets/Subject.png')}
             style={styles.image}
           />
         </Pressable>
