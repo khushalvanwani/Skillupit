@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView, Ani
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from '../Context/ThemeContext';
 
 // Custom Animated Progress Bar Component
 const AnimatedProgressBar = ({ progress, barColor, style }) => {

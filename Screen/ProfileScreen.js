@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Image, Pressable, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { ThemeContext } from './ThemeContext';
-import { ProfileContext } from './ProfileContext';
+import { ThemeContext } from '../Context/ThemeContext';
+import { ProfileContext } from '../Context/ProfileContext';
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
@@ -11,7 +11,7 @@ export default function ProfileScreen() {
 
   const backgroundColor = '#0f0f2b';
   const textColor = '#fff';
-  // const panda = require('./assets/panda.png'); // use your brand image
+  // const panda = require('../assets/panda.png'); // use your brand image
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor }]}>
