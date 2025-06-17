@@ -61,13 +61,14 @@ export const QuizProvider = ({ children }) => {
     }
     setLoading(false);
   };
+  
 
   return (
     <QuizContext.Provider
       value={{
         courses, fetchCourses,
         topics, fetchTopics,
-        questions, fetchQuestions,
+        questions, fetchQuestions, setQuestions,
         loading
       }}>
       {children}

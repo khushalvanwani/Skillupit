@@ -39,10 +39,10 @@ export default function TestSectionScreen() {
             android_ripple={{ color: '#f863b522' }}
           >
             <LinearGradient
-              colors={['#2b2c83', '#c84490']}
-              style={styles.gradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
+               colors={['#ff6ec4', '#fff']}     // new indigo-blue blend
+  start={{ x: 0, y: 0 }}
+  end={{ x: 0.3, y: 0.3 }}
+  style={styles.gradient}
             >
               <View style={styles.innerOverlay} />
               <View style={styles.cardContent}>
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     letterSpacing: 1,
-    color: '#fff',
+     color: '#193974', 
     textShadowColor: 'rgba(255,255,255,0.3)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
